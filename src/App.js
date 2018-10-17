@@ -18,13 +18,22 @@ class App extends Component {
       racers: racers
     })
   }
-  
+
+  deleteRacer = (id) => {
+    let racers = this.state.racers.filter(racers => {
+      return racers.id !== id
+    });
+    this.setState({
+      racers: racers
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>My First React App</h1>
         <p> Welcome :) </p>
-        <Racers racers= {this.state.racers}/>
+        <Racers deleteRacer={this.deleteRacer} racers= {this.state.racers}/>
         <AddRacer addRacer={this.addRacer} />
       </div>
     );
