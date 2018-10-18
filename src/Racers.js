@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Racers.css"
 
 const Racers = ({racers, deleteRacer}) => {
 	const racersList = racers.map(racer => {
